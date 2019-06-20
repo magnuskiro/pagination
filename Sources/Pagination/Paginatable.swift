@@ -23,7 +23,7 @@ public protocol Paginatable: Model {
 extension Paginatable {
 
     public static var defaultPageSize: Int {
-        return 10
+        return 100
     }
 
     public static var maxPageSize: Int? {
@@ -43,11 +43,11 @@ extension KeyPath where Root: Model {
     public func querySort(_ direction: Root.Database.QuerySortDirection = Root.Database.querySortDirectionDescending) -> Root.Database.QuerySort {
         return Root.Database.querySort(self.queryField, direction)
     }
-    
+
     public var fluentProperty: FluentProperty {
         return FluentProperty.keyPath(self)
     }
-    
+
     public var queryField: Root.Database.QueryField {
         return Root.Database.queryField(fluentProperty)
     }
