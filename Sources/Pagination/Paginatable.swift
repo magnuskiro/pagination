@@ -23,7 +23,7 @@ public protocol Paginatable: Model {
 extension Paginatable {
 
     public static var defaultPageSize: Int {
-        return 100
+        return 50
     }
 
     public static var maxPageSize: Int? {
